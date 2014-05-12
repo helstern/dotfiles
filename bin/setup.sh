@@ -15,7 +15,7 @@ cd "$ROOT_DIR"
 git pull origin master
 
 function install() {
-    rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bin/" --exclude "README.md" \
+    rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bin/" --exclude "originals/" --exclude "README.md" \
         -av --no-perms \
         . ~
     source ~/.bash_profile
