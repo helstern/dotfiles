@@ -2,9 +2,10 @@
 # Convert to OS-dependent EOL (LF for UNIX, CRLF for Windows), !eol means Git will use core.eol setting of .git/config
 * text=auto !eol
 
-#
+###
 # The above will handle all files NOT found below
-#
+###
+
 # These files are text and should be normalized (Convert crlf => lf)
 *.gitattributes text
 .gitignore text
@@ -12,5 +13,7 @@
 # Explicitly declare text files you always want normalized and converted to native line endings on checkout.
 
 # Explicitly declare files that will always have CRLF line endings on checkout.
+# Example: *.sln text eol=crlf
 
 # Explicitly denote all files that are truly binary and should not be modified.
+# Example: *.png binary
