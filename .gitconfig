@@ -1,0 +1,56 @@
+[add]
+
+[alias]
+# list all aliases
+alias = "!git config -l | grep alias | cut -c 7-"
+
+# View abbreviated SHA, description, and history graph of the latest 20 commits
+l = log --pretty=oneline -n 20 --graph --abbrev-commit
+# Switch to a branch, creating it if necessary
+go = checkout -B
+
+ls = ls-files
+# list all files ignored by git:
+ls-ign = ls-files -o -i --exclude-standard
+
+[color]
+# Use colors in Git commands that are capable of colored output when
+# outputting to the terminal. (This is the default setting in Git ≥ 1.8.4.)
+ui = auto
+
+[color "diff"]
+# Highlight whitespace in diffs
+whitespace = red reverse
+
+[core]
+# Use custom `.gitignore` and `.gitattributes`
+excludesfile = ~/.gitignore
+attributesfile = ~/.gitattributes
+
+# Treat spaces before tabs and all kinds of trailing whitespace as an error.
+# [default] blank-at-eol: treats trailing whitespaces at the end of the line as an error
+# [default] space-before-tab: looks for spaces before tabs at the beginning of a line
+# indent-with-non-tab: treats a line that is indented with space characters instead of the equivalent tabs as an error
+# [default] trailing-space: looks for spaces at the end of a line
+whitespace = blank-at-eol,space-before-tab,-indent-with-non-tab,trailing-space
+
+# for all text files replace CRLF with LF when writing to db and turn LF into CRLF when writing to working directory.
+autocrlf = true
+
+[difftool]
+
+[format]
+
+[guitool]
+
+[merge]
+# when resolving conflicts show a <<<<<<< conflict marker, changes made by one side, a ======= marker,
+# changes made by the other side, and then a >>>>>>> marker
+conflictstyle = merge
+
+[pull]
+# do a rebase instead of a merge when pulling you can run git pull like this: git pull --rebase
+rebase = true
+
+[push]
+default = simple
