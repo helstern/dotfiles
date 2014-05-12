@@ -23,6 +23,10 @@ ui = auto
 whitespace = red reverse
 
 [core]
+
+# do not ignore executable bit
+filemode = true
+
 # Use custom `.gitignore` and `.gitattributes`
 excludesfile = ~/.gitignore
 attributesfile = ~/.gitattributes
