@@ -1,0 +1,7 @@
+# ip related commands
+#show all ip aliases
+alias ip?='alias | grep -i ^ip'
+#show all local ip
+alias iplocal='ifconfig | grep -P -o "inet addr:(\d+.){3}\d+" | grep -P -o "(\d+.){3}\d+"'
+#show wan ip
+alias ipwan='ipwanexec "ident.me|ifconfig.me|tnx.nl/ip|icanhazip.com|ipecho.net/plain|ip.appspot.com|whatsmyip.akamai.com"'
