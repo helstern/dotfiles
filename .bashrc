@@ -105,3 +105,9 @@ fi
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
+
+#source bash function definitions
+if [ -f ~/.bash_functions ]; then
+    . ~/.bash_functions
+fi
+
