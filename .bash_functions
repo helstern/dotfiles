@@ -12,3 +12,13 @@ function ipwanexec() {
         return 1
     fi
 }
+
+# Email me a short note
+function briefemailexec(){
+    if [ $# -eq 0 ]; then
+        echo Usage: briefemailexec
+        return 1
+    fi
+    mailx -s "$@" $USER <<< "$@"
+    echo "Sent email"
+}
