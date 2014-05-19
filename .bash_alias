@@ -5,3 +5,16 @@ alias ip?='alias | grep -i ^ip'
 alias iplocal='ifconfig | grep -P -o "inet addr:(\d+.){3}\d+" | grep -P -o "(\d+.){3}\d+"'
 #show wan ip
 alias ipwan='ipwanexec "ident.me|ifconfig.me|tnx.nl/ip|icanhazip.com|ipecho.net/plain|ip.appspot.com|whatsmyip.akamai.com"'
+
+# copy paste
+alias clipboard?='alias | grep -i ^(copy|paste)'
+alias copyx='xclip -selection clipboard'
+alias pastex='xclip -selection clipboard -o'
+
+# ssh
+alias ssh?='alias | grep -i ^ssh'
+alias sshcopykey="more ~/.ssh/id_rsa.pub | copy | echo 'Public key copied to clipboard\n'"
+
+# archive
+alias archive?='alias | grep -i ^extract'
+alias extract='extractexec'
