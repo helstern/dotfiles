@@ -10,6 +10,10 @@ here = !git init && git add . && git commit -m \"initial commit\"
 # branch
 # Switch to a branch, creating it if necessary
 go = checkout -B
+# delete all branches which are merged into another: git branch-delete-merged <branchname>
+branch-delete-merged = "!f() { git checkout --quiet "$1" && \
+    git branch --merged | grep --invert-match '\\*' | xargs -n 1 git branch --delete; \
+    git checkout --quiet @{-1}; }; f"
 
 # loging
 # View abbreviated SHA, description, and history graph of the latest 20 commits
