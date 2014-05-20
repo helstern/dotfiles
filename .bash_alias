@@ -7,9 +7,11 @@ alias iplocal='ifconfig | grep -P -o "inet addr:(\d+.){3}\d+" | grep -P -o "(\d+
 alias ipwan='ipwanexec "ident.me|ifconfig.me|tnx.nl/ip|icanhazip.com|ipecho.net/plain|ip.appspot.com|whatsmyip.akamai.com"'
 
 # copy paste
-alias clipboard?='alias | grep -i ^(copy|paste)'
+alias clipboard?='alias | grep -i ^(copy|paste|crypt)'
 alias copyclip='xclip -selection clipboard'
 alias pasteclip='xclip -selection clipboard -o'
+# encrypt contents of clipboards
+alias cryptclip="pasteclip | gpg --encrypt --armor --recipient radu.helstern@gmail.com | copyclip"
 
 # ssh
 alias ssh?='alias | grep -i ^ssh'
