@@ -55,3 +55,18 @@ extractexec () {
          echo "'$1' is not a valid file"
      fi
 }
+
+# Search all files (symbolic links ignored) in the current directory containing a piece of text
+findtextexec() {
+    if [ $# -eq 0 ]; then
+        echo 'Usage: findtext <text> <filename>'
+        return 1
+    fi
+
+    if [ $# -neq 2 ]; then
+        echo 'Error: needs 2 parameters'
+        return 1
+    fi
+
+    find . -iname "$2" -type f -print0 | xargs -0 grep --ignore-case --files-with-matches "$1";
+}

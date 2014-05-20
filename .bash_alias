@@ -18,3 +18,7 @@ alias sshcopykey="more ~/.ssh/id_rsa.pub | copy | echo 'Public key copied to cli
 # archive
 alias archive?='alias | grep -i ^extract'
 alias extract='extractexec'
+
+# find
+alias find?='alias | grep -i ^find'
+alias findtext='findtextexec'
