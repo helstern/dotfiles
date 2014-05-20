@@ -4,14 +4,37 @@
 # list all aliases
 alias = "!git config -l | grep alias | cut -c 7-"
 
-# View abbreviated SHA, description, and history graph of the latest 20 commits
-l = log --pretty=oneline -n 20 --graph --abbrev-commit
+# create
+here = !git init && git add . && git commit -m \"initial commit\"
+
+# branch
 # Switch to a branch, creating it if necessary
 go = checkout -B
 
+# loging
+# View abbreviated SHA, description, and history graph of the latest 20 commits
+l = log --pretty=oneline -n 20 --graph --abbrev-commit
+
+# list
 ls = ls-files
 # list all files ignored by git:
 ls-ign = ls-files -o -i --exclude-standard
+
+# find
+# find a piece of text in all history: git find text
+find = rev-list --all | xargs git grep -F
+
+# ignore
+# add a file to gitignore: git ignore filename
+ignore = !([ ! -e .gitignore ] && touch .gitignore) | echo $1 >>.gitignore
+# assume a tracked file is not-changing: git assume filename
+assume = update-index --assume-unchanged
+# resume tracking changes for tracked file: git unassume filename
+unassume = update-index --no-assume-unchanged
+# list all tracked files which are assumed not changed: git assume-list
+assume-list = !git ls-files -v | grep ^h | cut -c 3-
+
+
 
 [color]
 # Use colors in Git commands that are capable of colored output when
