@@ -26,3 +26,12 @@ alias extract='extractexec'
 alias find?='alias | grep -i ^find'
 # find a piece of text in the current directory
 alias findtext='findtextexec'
+
+# time & date
+alias find?='alias | grep -i ^(date|tstmp)'
+# put the date into your clipboard
+alias dateclinp='date | copyclip'
+# put a timestamp into your clipboard (style is YYYY-MM-DD-HH.MM.SS)
+alias tstmpclip='echo -n "$(date +%Y-%m-%d-%H.%M.%S)" | copyclip'
+# output a timestamp to the terminal (same format as above)
+alias tstmp='date +%Y-%m-%d-%H.%M.%S'
