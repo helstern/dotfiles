@@ -2,7 +2,7 @@
 # show all ip aliases
 alias ip?='alias | grep -i ^ip'
 # show all local ip
-alias iplocal='ifconfig | grep -P -o "inet addr:(\d+.){3}\d+" | grep -P -o "(\d+.){3}\d+"'
+alias iplocal='ifconfig | grep --perl-regexp --only-matching "inet addr:(\d+.){3}\d+" | grep --perl-regexp --only-matching "(\d+.){3}\d+"'
 # show wan ip
 alias ipwan='ipwanexec "ident.me|ifconfig.me|tnx.nl/ip|icanhazip.com|ipecho.net/plain|ip.appspot.com|whatsmyip.akamai.com"'
 
@@ -28,7 +28,7 @@ alias find?='alias | grep -i ^find'
 alias findtext='findtextexec'
 
 # time & date
-alias find?='alias | grep -i ^(date|tstmp)'
+alias datetime?='alias | grep -i ^(date|tstmp)'
 # put the date into your clipboard
 alias dateclinp='date | copyclip'
 # put a timestamp into your clipboard (style is YYYY-MM-DD-HH.MM.SS)
