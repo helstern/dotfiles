@@ -12,7 +12,8 @@ fi
 cd "$ROOT_DIR"
 
 #update the repository
-git pull origin master
+CURRENT_BRANCH=$(git branch | grep ^* | cut --delimiter ' ' --fields 2)
+git pull origin $CURRENT_BRANCH
 
 function install() {
     rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bin/" --exclude "originals/" --exclude "README.md" \
