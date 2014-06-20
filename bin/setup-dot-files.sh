@@ -18,6 +18,7 @@ git pull origin $CURRENT_BRANCH
 
 function install() {
     rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bin/" --exclude "originals/" --exclude "README.md" \
+        --exclude 'docs/' \
         -av --no-perms \
         . ~
     source ~/.bash_profile
