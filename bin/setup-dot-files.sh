@@ -13,7 +13,6 @@ cd "$ROOT_DIR"
 
 #update the repository
 CURRENT_BRANCH=$(git branch | grep ^* | cut --delimiter ' ' --fields 2)
-git fetch origin $CURRENT_BRANCH
 git pull origin $CURRENT_BRANCH
 
 function install() {
