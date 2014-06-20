@@ -84,4 +84,6 @@ conflictstyle = merge
 rebase = true
 
 [push]
-default = simple
+# default = simple available in git 2.0 meaning only current branch is pushed if no args given
+# git 1.7.9.5
+default = current
