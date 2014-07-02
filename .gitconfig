@@ -46,7 +46,7 @@ assume-list = !git ls-files -v | grep ^h | cut -c 3-
 ui = auto
 
 [color "diff"]
-# Highlight whitespace in diffs
+# Highlight whitesp ace in diffs
 whitespace = red reverse
 
 [core]
@@ -65,8 +65,9 @@ attributesfile = ~/.gitattributes
 # [default] trailing-space: looks for spaces at the end of a line
 whitespace = blank-at-eol,space-before-tab,-indent-with-non-tab,trailing-space
 
-# for all text files replace CRLF with LF when writing to db and turn LF into CRLF when writing to working directory.
-autocrlf = true
+# for all text files replace CRLF with LF when writing to db and do nothing when writing to working directory.
+autocrlf = input
+safecrlf = true
 
 [difftool]
 
