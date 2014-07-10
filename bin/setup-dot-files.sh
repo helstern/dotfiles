@@ -16,9 +16,14 @@ CURRENT_BRANCH=$(git branch | grep ^* | cut --delimiter ' ' --fields 2)
 git pull origin $CURRENT_BRANCH
 
 function install() {
-    rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bin/" --exclude "originals/" --exclude "README.md" \
-        --exclude 'docs/' \
-        -av --no-perms \
+    rsync --exclude ".git/"                 \
+        --exclude ".DS_Store"               \
+        --exclude "bin/"                    \
+        --exclude "originals/"              \
+        --exclude "README.md"               \
+        --exclude 'docs/'                   \
+        --exclude '.bashrc.d/.gitignore'    \
+        -av --no-perms                      \
         . ~
     source ~/.bash_profile
 }
