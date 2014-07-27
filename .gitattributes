@@ -14,7 +14,7 @@
 
 # These files are text and should be normalized (Convert crlf => lf)
 .gitattributes text
-.gitignore      text
+.gitignore     text
 
 # Explicitly declare text files you always want normalized and converted to native line endings on checkout.
 
